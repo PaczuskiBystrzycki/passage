@@ -1,9 +1,9 @@
 rootModule.config(function($routeProvider) {
     $routeProvider
-        .when("/", {
-            templateUrl : "login.htm"
+        .when("/nn", {
+            templateUrl : "templates/offer.htm"
         })
         .when("/offer", {
-            templateUrl : "offer.htm"
+            templateUrl : "/templates/offer.htm"
         });
 });
