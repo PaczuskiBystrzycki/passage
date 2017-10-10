@@ -523,7 +523,7 @@ var ANIMATE_TIMER_KEY = '$$animateCss';
  * The `$animateCss` service is a useful utility to trigger customized CSS-based transitions/keyframes
  * from a JavaScript-based animation or directly from a directive. The purpose of `$animateCss` is NOT
  * to side-step how `$animate` and ngAnimate work, but the goal is to allow pre-existing animations or
- * directives to create more complex animations that can be purely driven using CSS code.
+ * directives.js to create more complex animations that can be purely driven using CSS code.
  *
  * Note that only browsers that support CSS transitions and/or keyframe animations are capable of
  * rendering animations triggered via `$animateCss` (bad news for IE9 and lower).

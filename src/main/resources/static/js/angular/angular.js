@@ -232,7 +232,7 @@ function minErr(module, ErrorConstructor) {
  * # ng (core module)
  * The ng module is loaded by default when an AngularJS application is started. The module itself
  * contains the essential components for an AngularJS application to function. The table below
- * lists a high level breakdown of each of the services/factories, filters, directives and testing
+ * lists a high level breakdown of each of the services/factories, filters, directives.js and testing
  * components available within this core module.
  *
  * <div doc-module-components="ng"></div>
@@ -2244,7 +2244,7 @@ function setupModuleLoader(window) {
      *
      * # Module
      *
-     * A module is a collection of services, directives, controllers, filters, and configuration information.
+     * A module is a collection of services, directives.js, controllers, filters, and configuration information.
      * `angular.module` is used to configure the {@link auto.$injector $injector}.
      *
      * ```js
@@ -2460,7 +2460,7 @@ function setupModuleLoader(window) {
            *
            *
            * Defines an animation hook that can be later used with
-           * {@link $animate $animate} service and directives that use this service.
+           * {@link $animate $animate} service and directives.js that use this service.
            *
            * ```js
            * module.animation('.animation-name', function($inject1, $inject2) {
@@ -2515,10 +2515,10 @@ function setupModuleLoader(window) {
            * @ngdoc method
            * @name angular.Module#directive
            * @module ng
-           * @param {string|Object} name Directive name, or an object map of directives where the
+           * @param {string|Object} name Directive name, or an object map of directives.js where the
            *    keys are the names and the values are the factories.
            * @param {Function} directiveFactory Factory function for creating new instance of
-           * directives.
+           * directives.js.
            * @description
            * See {@link ng.$compileProvider#directive $compileProvider.directive()}.
            */
@@ -3428,7 +3428,7 @@ function jqLiteInheritedData(element, name, value) {
     }
 
     // If dealing with a document fragment node with a host element, and no parent, use the host
-    // element as the parent. This enables directives within a Shadow DOM or polyfilled Shadow DOM
+    // element as the parent. This enables directives.js within a Shadow DOM or polyfilled Shadow DOM
     // to lookup parent controllers.
     element = element.parentNode || (element.nodeType === NODE_TYPE_DOCUMENT_FRAGMENT && element.host);
   }
@@ -5594,9 +5594,9 @@ var $AnimateProvider = ['$provide', /** @this */ function($provide) {
    * <div class="alert alert-success">
    *   **Best Practice:**
    *   Keep the filtering function as lean as possible, because it will be called for each DOM
-   *   action (e.g. insertion, removal, class change) performed by "animation-aware" directives.
-   *   See {@link guide/animations#which-directives-support-animations- here} for a list of built-in
-   *   directives that support animations.
+   *   action (e.g. insertion, removal, class change) performed by "animation-aware" directives.js.
+   *   See {@link guide/animations#which-directives.js-support-animations- here} for a list of built-in
+   *   directives.js that support animations.
    *   Performing computationally expensive or time-consuming operations on each call of the
    *   filtering function can make your animations sluggish.
    * </div>
@@ -5682,11 +5682,11 @@ var $AnimateProvider = ['$provide', /** @this */ function($provide) {
      *
      * By default $animate doesn't trigger any animations. This is because the `ngAnimate` module isn't
      * included and only when it is active then the animation hooks that `$animate` triggers will be
-     * functional. Once active then all structural `ng-` directives will trigger animations as they perform
-     * their DOM-related operations (enter, leave and move). Other directives such as `ngClass`,
+     * functional. Once active then all structural `ng-` directives.js will trigger animations as they perform
+     * their DOM-related operations (enter, leave and move). Other directives.js such as `ngClass`,
      * `ngShow`, `ngHide` and `ngMessages` also provide support for animations.
      *
-     * It is recommended that the`$animate` service is always used when executing DOM-related procedures within directives.
+     * It is recommended that the`$animate` service is always used when executing DOM-related procedures within directives.js.
      *
      * To learn more about enabling animation support, click here to visit the
      * {@link ngAnimate ngAnimate module page}.
@@ -8176,7 +8176,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
    * Register a new directive with the compiler.
    *
    * @param {string|Object} name Name of the directive in camel-case (i.e. <code>ngBind</code> which
-   *    will match as <code>ng-bind</code>), or an object map of directives where the keys are the
+   *    will match as <code>ng-bind</code>), or an object map of directives.js where the keys are the
    *    names and the values are the factories.
    * @param {Function|Array} directiveFactory An injectable directive factory function. See the
    *    {@link guide/directive directive guide} and the {@link $compile compile API} for more info.
@@ -8262,7 +8262,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
    *      See {@link ng.$compile#-bindtocontroller- `bindToController`}.
    *    - `transclude` – `{boolean=}` – whether {@link $compile#transclusion content transclusion} is enabled.
    *      Disabled by default.
-   *    - `require` - `{Object<string, string>=}` - requires the controllers of other directives and binds them to
+   *    - `require` - `{Object<string, string>=}` - requires the controllers of other directives.js and binds them to
    *      this component's controller. The object keys specify the property names under which the required
    *      controllers (object values) will be bound. See {@link ng.$compile#-require- `require`}.
    *    - `$...` – additional properties to attach to the directive factory function and the controller
@@ -8275,7 +8275,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
    * are always isolated (i.e. `scope: {}`) and are always restricted to elements (i.e. `restrict: 'E'`).
    *
    * Component definitions are very simple and do not require as much configuration as defining general
-   * directives. Component definitions usually consist only of a template and a controller backing it.
+   * directives.js. Component definitions usually consist only of a template and a controller backing it.
    *
    * In order to make the definition easier, components enforce best practices like use of `controllerAs`,
    * `bindToController`. They always have **isolate scope** and are restricted to elements.
@@ -8558,17 +8558,17 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
    * @description
    *
    * It indicates to the compiler
-   * whether or not directives on comments should be compiled.
+   * whether or not directives.js on comments should be compiled.
    * Defaults to `true`.
    *
-   * Calling this function with false disables the compilation of directives
+   * Calling this function with false disables the compilation of directives.js
    * on comments for the whole application.
    * This results in a compilation performance gain,
-   * as the compiler doesn't have to check comments when looking for directives.
-   * This should however only be used if you are sure that no comment directives are used in
-   * the application (including any 3rd party directives).
+   * as the compiler doesn't have to check comments when looking for directives.js.
+   * This should however only be used if you are sure that no comment directives.js are used in
+   * the application (including any 3rd party directives.js).
    *
-   * @param {boolean} enabled `false` if the compiler may ignore directives on comments
+   * @param {boolean} enabled `false` if the compiler may ignore directives.js on comments
    * @returns {boolean|object} the current value (or `this` if called as a setter for chaining)
    */
   this.commentDirectivesEnabled = function(value) {
@@ -8587,17 +8587,17 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
    * @description
    *
    * It indicates to the compiler
-   * whether or not directives on element classes should be compiled.
+   * whether or not directives.js on element classes should be compiled.
    * Defaults to `true`.
    *
-   * Calling this function with false disables the compilation of directives
+   * Calling this function with false disables the compilation of directives.js
    * on element classes for the whole application.
    * This results in a compilation performance gain,
-   * as the compiler doesn't have to check element classes when looking for directives.
-   * This should however only be used if you are sure that no class directives are used in
-   * the application (including any 3rd party directives).
+   * as the compiler doesn't have to check element classes when looking for directives.js.
+   * This should however only be used if you are sure that no class directives.js are used in
+   * the application (including any 3rd party directives.js).
    *
-   * @param {boolean} enabled `false` if the compiler may ignore directives on element classes
+   * @param {boolean} enabled `false` if the compiler may ignore directives.js on element classes
    * @returns {boolean|object} the current value (or `this` if called as a setter for chaining)
    */
   this.cssClassDirectivesEnabled = function(value) {
@@ -8685,7 +8685,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
        *
        * Also there is special case for Moz prefix starting with upper case letter.
        *
-       * For further information check out the guide on {@link guide/directive#matching-directives Matching Directives}
+       * For further information check out the guide on {@link guide/directive#matching-directives.js Matching Directives}
        *
        * @param {string} name Name to normalize
        */
@@ -8751,7 +8751,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
       },
 
       /**
-       * Set a normalized attribute on the element in a way such that all directives
+       * Set a normalized attribute on the element in a way such that all directives.js
        * can share the attribute. This function properly handles boolean attributes.
        * @param {string} key Normalized key. (ie ngAttribute)
        * @param {string|boolean} value The value to set. If `null` attribute will be deleted.
@@ -9056,7 +9056,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
     }
 
     /**
-     * Compile function matches each node in nodeList against the directives. Once all directives
+     * Compile function matches each node in nodeList against the directives.js. Once all directives.js
      * for a particular node are collected their compile functions are executed. The compile
      * functions return values - the linking functions - are combined into a composite linking
      * function, which is the a linking function for the node.
@@ -9068,7 +9068,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
      *        the rootElement must be set the jqLite collection of the compile root. This is
      *        needed so that the jqLite collection items can be replaced with widgets.
      * @param {number=} maxPriority Max directive priority.
-     * @returns {Function} A composite linking function of all of the matched directives or null.
+     * @returns {Function} A composite linking function of all of the matched directives.js or null.
      */
     function compileNodes(nodeList, transcludeFn, $rootElement, maxPriority, ignoreDirective,
                             previousCompileContext) {
@@ -9236,11 +9236,11 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
     }
 
     /**
-     * Looks for directives on the given node and adds them to the directive collection which is
+     * Looks for directives.js on the given node and adds them to the directive collection which is
      * sorted.
      *
      * @param node Node to search.
-     * @param directives An array to which the directives are added to. This array is sorted before
+     * @param directives An array to which the directives.js are added to. This array is sorted before
      *        the function returns.
      * @param attrs The shared attrs object which is used to populate the normalized attributes.
      * @param {number=} maxPriority Max directive priority.
@@ -9432,11 +9432,11 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
     }
 
     /**
-     * Once the directives have been collected, their compile functions are executed. This method
+     * Once the directives.js have been collected, their compile functions are executed. This method
      * is responsible for inlining directive templates as well as terminating the application
-     * of the directives if the terminal directive has been reached.
+     * of the directives.js if the terminal directive has been reached.
      *
-     * @param {Array} directives Array of collected directives to execute their compile function.
+     * @param {Array} directives Array of collected directives.js to execute their compile function.
      *        this needs to be pre-sorted by priority order.
      * @param {Node} compileNode The raw DOM node to apply the compile functions to
      * @param {Object} templateAttrs The shared attribute function
@@ -9479,7 +9479,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
           mightHaveMultipleTransclusionError = false,
           directiveValue;
 
-      // executes all directives on the current element
+      // executes all directives.js on the current element
       for (var i = 0, ii = directives.length; i < ii; i++) {
         directive = directives[i];
         var attrStart = directive.$$start;
@@ -9492,14 +9492,14 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
         $template = undefined;
 
         if (terminalPriority > directive.priority) {
-          break; // prevent further processing of directives
+          break; // prevent further processing of directives.js
         }
 
         directiveValue = directive.scope;
 
         if (directiveValue) {
 
-          // skip the check for directives with async templates, we'll check the derived sync
+          // skip the check for directives.js with async templates, we'll check the derived sync
           // directive when the template arrives
           if (!directive.templateUrl) {
             if (isObject(directiveValue)) {
@@ -9522,7 +9522,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
         directiveName = directive.name;
 
         // If we encounter a condition that can result in transclusion on the directive,
-        // then scan ahead in the remaining directives for others that may cause a multiple
+        // then scan ahead in the remaining directives.js for others that may cause a multiple
         // transclusion error to be thrown during the compilation process.  If a matching directive
         // is found, then we know that when we encounter a transcluded directive, we need to eagerly
         // compile the `transclude` function rather than doing it lazily in order to throw
@@ -9555,7 +9555,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
           hasTranscludeDirective = true;
 
           // Special case ngIf and ngRepeat so that we don't complain about duplicate transclusion.
-          // This option should only be used by directives that know how to safely handle element transclusion,
+          // This option should only be used by directives.js that know how to safely handle element transclusion,
           // where the transcluded nodes are added or replaced after linking.
           if (!directive.$$tlb) {
             assertNoDuplicate('transclusion', nonTlbTranscludeDirective, directive, $compileNode);
@@ -9690,17 +9690,17 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
 
             var newTemplateAttrs = {$attr: {}};
 
-            // combine directives from the original node and from the template:
-            // - take the array of directives for this element
+            // combine directives.js from the original node and from the template:
+            // - take the array of directives.js for this element
             // - split it into two parts, those that already applied (processed) and those that weren't (unprocessed)
-            // - collect directives from the template and sort them by priority
-            // - combine directives as: processed + template + unprocessed
+            // - collect directives.js from the template and sort them by priority
+            // - combine directives.js as: processed + template + unprocessed
             var templateDirectives = collectDirectives(compileNode, [], newTemplateAttrs);
             var unprocessedDirectives = directives.splice(i + 1, directives.length - (i + 1));
 
             if (newIsolateScopeDirective || newScopeDirective) {
               // The original directive caused the current element to be replaced but this element
-              // also needs to have a new scope, so we need to tell the template directives
+              // also needs to have a new scope, so we need to tell the template directives.js
               // that they would need to get their scope from further up, if they require transclusion
               markDirectiveScope(templateDirectives, newIsolateScopeDirective, newScopeDirective);
             }
@@ -10049,7 +10049,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
 
         var controllerInstance = $controller(controller, locals, true, directive.controllerAs);
 
-        // For directives with element transclusion the element is a comment.
+        // For directives.js with element transclusion the element is a comment.
         // In this case .data will not attach any data.
         // Instead, we save the controllers for the element in a local hash and attach to .data
         // later, once we have the actual element.
@@ -10299,7 +10299,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
 
 
     /**
-     * Sorting function for bound directives.
+     * Sorting function for bound directives.js.
      */
     function byPriority(a, b) {
       var diff = b.priority - a.priority;
@@ -10317,7 +10317,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
       }
 
       if (previousDirective) {
-        throw $compileMinErr('multidir', 'Multiple directives [{0}{1}, {2}{3}] asking for {4} on: {5}',
+        throw $compileMinErr('multidir', 'Multiple directives.js [{0}{1}, {2}{3}] asking for {4} on: {5}',
             previousDirective.name, wrapModuleNameIfDefined(previousDirective.$$moduleName),
             directive.name, wrapModuleNameIfDefined(directive.$$moduleName), what, startingTag(element));
       }
@@ -10739,7 +10739,7 @@ var PREFIX_REGEXP = /^((?:x|data)[:\-_])/i;
 var SPECIAL_CHARS_REGEXP = /[:\-_]+(.)/g;
 
 /**
- * Converts all accepted directives format into proper directive name.
+ * Converts all accepted directives.js format into proper directive name.
  * @param name Name to normalize
  */
 function directiveNormalize(name) {
@@ -18162,7 +18162,7 @@ function $RootScopeProvider() {
        *
        * Usually, you don't call `$digest()` directly in
        * {@link ng.directive:ngController controllers} or in
-       * {@link ng.$compileProvider#directive directives}.
+       * {@link ng.$compileProvider#directive directives.js}.
        * Instead, you should call {@link ng.$rootScope.Scope#$apply $apply()} (typically from within
        * a {@link ng.$compileProvider#directive directive}), which will force a `$digest()`.
        *
@@ -18345,7 +18345,7 @@ function $RootScopeProvider() {
        * propagate to the current scope and its children. Removal also implies that the current
        * scope is eligible for garbage collection.
        *
-       * The `$destroy()` is usually used by directives such as
+       * The `$destroy()` is usually used by directives.js such as
        * {@link ng.directive:ngRepeat ngRepeat} for managing the
        * unrolling of the loop.
        *
@@ -19239,10 +19239,10 @@ function $SceDelegateProvider() {
      *
      * @description
      * Returns a trusted representation of the parameter for the specified context. This trusted
-     * object will later on be used as-is, without any security check, by bindings or directives
+     * object will later on be used as-is, without any security check, by bindings or directives.js
      * that require this security context.
      * For instance, marking a string as trusted for the `$sce.HTML` context will entirely bypass
-     * the potential `$sanitize` call in corresponding `$sce.HTML` bindings or directives, such as
+     * the potential `$sanitize` call in corresponding `$sce.HTML` bindings or directives.js, such as
      * `ng-bind-html`. Note that in most cases you won't need to call this function: if you have the
      * sanitizer loaded, passing the value itself will render all the HTML that does not pose a
      * security risk.
@@ -27310,7 +27310,7 @@ var ngControllerDirective = [function() {
    </example>
  */
 /*
- * A collection of directives that allows creation of custom event handlers that are defined as
+ * A collection of directives.js that allows creation of custom event handlers that are defined as
  * angular expressions and are compiled and executed within the current scope.
  */
 var ngEventDirectives = {};
@@ -28133,7 +28133,7 @@ var ngIncludeDirective = ['$templateRequest', '$anchorScroll', '$animate',
               // However, using ng-include on an element with additional content does not make sense...
               // Note: We can't remove them in the cloneAttchFn of $transclude as that
               // function is called before linking the content, which would apply child
-              // directives to non existing elements.
+              // directives.js to non existing elements.
               var clone = $transclude(newScope, function(clone) {
                 cleanupLastIncludeContent();
                 $animate.enter(clone, null, $element).done(afterAnimation);
@@ -28744,7 +28744,7 @@ NgModelController.prototype = {
    *
    * The default `$isEmpty` function checks whether the value is `undefined`, `''`, `null` or `NaN`.
    *
-   * You can override this for input directives whose concept of being empty is different from the
+   * You can override this for input directives.js whose concept of being empty is different from the
    * default. The `checkboxInputType` directive does this because in its case a value of `false`
    * implies empty.
    *
@@ -29946,7 +29946,7 @@ var ngModelOptionsDirective = function() {
 
   return {
     restrict: 'A',
-    // ngModelOptions needs to run before ngModel and input directives
+    // ngModelOptions needs to run before ngModel and input directives.js
     priority: 10,
     require: {parentCtrl: '?^^ngModelOptions'},
     bindToController: true,
@@ -30705,7 +30705,7 @@ var ngOptionsDirective = ['$compile', '$document', '$parse', function($compile, 
     link: {
       pre: function ngOptionsPreLink(scope, selectElement, attr, ctrls) {
         // Deactivate the SelectController.register method to prevent
-        // option directives from accidentally registering themselves
+        // option directives.js from accidentally registering themselves
         // (and unwanted $destroy handlers etc.)
         ctrls[0].registerOption = noop;
       },
