@@ -1,0 +1,4 @@
+rootModule.controller("navbarController",function ($scope) {
+    $scope.imie="adam";
+
+})
