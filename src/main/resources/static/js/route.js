@@ -1,6 +1,6 @@
 rootModule.config(function($routeProvider) {
     $routeProvider
-        .when("/", {
+        .when("/qw3re", {
             templateUrl : " views/dashboard.htm"
         })
         .when("/login", {
@@ -8,5 +8,7 @@ rootModule.config(function($routeProvider) {
         })
         .when("/offer", {
             templateUrl : " views/offers.htm"
-        });
+        }).otherwise("/",{
+            templateUrl : "views/dashboard.htm"
+    });
 });
