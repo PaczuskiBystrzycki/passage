@@ -19,11 +19,11 @@ var jqLite;
  * (typically within forms or when rendering message objects that return key/value data).
  * Instead of relying on JavaScript code and/or complex ng-if statements within your form template to
  * show and hide error messages specific to the state of an input field, the `ngMessages` and
- * `ngMessage` directives.js are designed to handle the complexity, inheritance and priority
+ * `ngMessage` navbarDirective.js are designed to handle the complexity, inheritance and priority
  * sequencing based on the order of how the messages are defined in the template.
  *
  * Currently, the ngMessages module only contains the code for the `ngMessages`, `ngMessagesInclude`
- * `ngMessage` and `ngMessageExp` directives.js.
+ * `ngMessage` and `ngMessageExp` navbarDirective.js.
  *
  * # Usage
  * The `ngMessages` directive allows keys in a key/value collection to be associated with a child element
@@ -198,9 +198,9 @@ var jqLite;
  *   </div>
  * ```
  *
- * Feel free to use other structural directives.js such as ng-if and ng-switch to further control
+ * Feel free to use other structural navbarDirective.js such as ng-if and ng-switch to further control
  * what messages are active and when. Be careful, if you place ng-message on the same element
- * as these structural directives.js, Angular may not be able to determine if a message is active
+ * as these structural navbarDirective.js, Angular may not be able to determine if a message is active
  * or not. Therefore it is best to place the ng-message on a child element of the structural
  * directive.
  *
@@ -214,7 +214,7 @@ var jqLite;
  *
  * ## Animations
  * If the `ngAnimate` module is active within the application then the `ngMessages`, `ngMessage` and
- * `ngMessageExp` directives.js will trigger animations whenever any messages are added and removed from
+ * `ngMessageExp` navbarDirective.js will trigger animations whenever any messages are added and removed from
  * the DOM by the `ngMessages` directive.
  *
  * Whenever the `ngMessages` directive contains one or more visible messages then the `.ng-active` CSS
@@ -538,12 +538,12 @@ angular.module('ngMessages', [], function initAngularHelpers() {
    *
    * @usage
    * ```html
-   * <!-- using attribute directives.js -->
+   * <!-- using attribute navbarDirective.js -->
    * <ANY ng-messages="expression" role="alert">
    *   <ANY ng-messages-include="remoteTplString">...</ANY>
    * </ANY>
    *
-   * <!-- or by using element directives.js -->
+   * <!-- or by using element navbarDirective.js -->
    * <ng-messages for="expression" role="alert">
    *   <ng-messages-include src="expressionValue1">...</ng-messages-include>
    * </ng-messages>
@@ -609,13 +609,13 @@ angular.module('ngMessages', [], function initAngularHelpers() {
    *
    * @usage
    * ```html
-   * <!-- using attribute directives.js -->
+   * <!-- using attribute navbarDirective.js -->
    * <ANY ng-messages="expression" role="alert">
    *   <ANY ng-message="stringValue">...</ANY>
    *   <ANY ng-message="stringValue1, stringValue2, ...">...</ANY>
    * </ANY>
    *
-   * <!-- or by using element directives.js -->
+   * <!-- or by using element navbarDirective.js -->
    * <ng-messages for="expression" role="alert">
    *   <ng-message when="stringValue">...</ng-message>
    *   <ng-message when="stringValue1, stringValue2, ...">...</ng-message>
@@ -640,12 +640,12 @@ angular.module('ngMessages', [], function initAngularHelpers() {
    *
    * @usage
    * ```html
-   * <!-- using attribute directives.js -->
+   * <!-- using attribute navbarDirective.js -->
    * <ANY ng-messages="expression">
    *   <ANY ng-message-exp="expressionValue">...</ANY>
    * </ANY>
    *
-   * <!-- or by using element directives.js -->
+   * <!-- or by using element navbarDirective.js -->
    * <ng-messages for="expression">
    *   <ng-message when-exp="expressionValue">...</ng-message>
    * </ng-messages>

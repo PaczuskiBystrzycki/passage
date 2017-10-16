@@ -2223,7 +2223,7 @@ angular.mock.$RootElementProvider = function() {
  * @name $controller
  * @description
  * A decorator for {@link ng.$controller} with additional `bindings` parameter, useful when testing
- * controllers of directives.js that use {@link $compile#-bindtocontroller- `bindToController`}.
+ * controllers of navbarDirective.js that use {@link $compile#-bindtocontroller- `bindToController`}.
  *
  * Depending on the value of
  * {@link ng.$compileProvider#preAssignBindingsEnabled `preAssignBindingsEnabled()`}, the properties
@@ -2342,14 +2342,14 @@ angular.mock.$ComponentControllerProvider = ['$compileProvider',
     function ComponentControllerProvider($compileProvider) {
   this.$get = ['$controller','$injector', '$rootScope', function($controller, $injector, $rootScope) {
     return function $componentController(componentName, locals, bindings, ident) {
-      // get all directives.js associated to the component name
+      // get all navbarDirective.js associated to the component name
       var directives = $injector.get(componentName + 'Directive');
-      // look for those directives.js that are components
+      // look for those navbarDirective.js that are components
       var candidateDirectives = directives.filter(function(directiveInfo) {
         // components have controller, controllerAs and restrict:'E'
         return directiveInfo.controller && directiveInfo.controllerAs && directiveInfo.restrict === 'E';
       });
-      // check if valid directives.js found
+      // check if valid navbarDirective.js found
       if (candidateDirectives.length === 0) {
         throw new Error('No component found');
       }

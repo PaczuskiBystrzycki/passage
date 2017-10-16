@@ -48,7 +48,7 @@ var noop;
  *
  * # ngRoute
  *
- * The `ngRoute` module provides routing and deeplinking services and directives.js for angular apps.
+ * The `ngRoute` module provides routing and deeplinking services and navbarDirective.js for angular apps.
  *
  * ## Example
  * See {@link ngRoute.$route#example $route} for an example of configuring and using `ngRoute`.
@@ -132,7 +132,7 @@ function $RouteProvider() {
    *      If present, the controller will be published to scope under the `controllerAs` name.
    *    - `template` – `{(string|Function)=}` – html template as a string or a function that
    *      returns an html template as a string which should be used by {@link
-   *      ngRoute.directive:ngView ngView} or {@link ng.directive:ngInclude ngInclude} directives.js.
+   *      ngRoute.directive:ngView ngView} or {@link ng.directive:ngInclude ngInclude} navbarDirective.js.
    *      This property takes precedence over `templateUrl`.
    *
    *      If `template` is a function, it will be called with the following parameters:
@@ -1168,7 +1168,7 @@ function ngViewFactory($route, $anchorScroll, $animate) {
             // However, using ng-views on an element with additional content does not make sense...
             // Note: We can't remove them in the cloneAttchFn of $transclude as that
             // function is called before linking the content, which would apply child
-            // directives.js to non existing elements.
+            // navbarDirective.js to non existing elements.
             var clone = $transclude(newScope, function(clone) {
               $animate.enter(clone, null, currentElement || $element).done(function onNgViewEnter(response) {
                 if (response !== false && angular.isDefined(autoScrollExp)
