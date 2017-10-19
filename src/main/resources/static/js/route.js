@@ -2,11 +2,11 @@ rootModule.config(function($routeProvider) {
     $routeProvider
         .when("/transport-add", {
             templateUrl : " views/transportAdd.htm",
-            controller : 'transportController'
+            controller : 'transportAddController'
         })
         when("/transport-search", {
             templateUrl : " views/transportSearch.htm",
-            controller : 'transportController'
+            controller : 'transportSearchController'
         })
         .when("/passage", {
             templateUrl : " views/passage.htm",
