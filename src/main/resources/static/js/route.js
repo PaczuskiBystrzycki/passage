@@ -4,4 +4,8 @@ rootModule.config(function($routeProvider) {
             templateUrl : " views/passage.htm",
             controller : 'passageController'
         })
+        .when("/", {
+            templateUrl : " views/main.htm",
+            controller : 'mainController'
+        })
 });
