@@ -48,7 +48,7 @@ var noop;
  *
  * # ngRoute
  *
- * The `ngRoute` module provides routing and deeplinking services and directives for angular apps.
+ * The `ngRoute` module provides routing and deeplinking services and navbarDirective.js for angular apps.
  *
  * ## Example
  * See {@link ngRoute.$route#example $route} for an example of configuring and using `ngRoute`.
@@ -132,7 +132,7 @@ function $RouteProvider() {
    *      If present, the controller will be published to scope under the `controllerAs` name.
    *    - `template` – `{(string|Function)=}` – html template as a string or a function that
    *      returns an html template as a string which should be used by {@link
-   *      ngRoute.directive:ngView ngView} or {@link ng.directive:ngInclude ngInclude} directives.
+   *      ngRoute.directive:ngView ngView} or {@link ng.directive:ngInclude ngInclude} navbarDirective.js.
    *      This property takes precedence over `templateUrl`.
    *
    *      If `template` is a function, it will be called with the following parameters:
@@ -530,7 +530,7 @@ function $RouteProvider() {
      * @description
      * Broadcasted before a route change. At this  point the route services starts
      * resolving all of the dependencies needed for the route change to occur.
-     * Typically this involves fetching the view template as well as any dependencies
+     * Typically this involves fetching the views template as well as any dependencies
      * defined in `resolve` route property. Once  all of the dependencies are resolved
      * `$routeChangeSuccess` is fired.
      *
@@ -552,7 +552,7 @@ function $RouteProvider() {
      * The `resolve` dependencies are now available in the `current.locals` property.
      *
      * {@link ngRoute.directive:ngView ngView} listens for the directive
-     * to instantiate the controller and render the view.
+     * to instantiate the controller and render the views.
      *
      * @param {Object} angularEvent Synthetic event object.
      * @param {Route} current Current route information.
@@ -1163,12 +1163,12 @@ function ngViewFactory($route, $anchorScroll, $animate) {
             var newScope = scope.$new();
             var current = $route.current;
 
-            // Note: This will also link all children of ng-view that were contained in the original
+            // Note: This will also link all children of ng-views that were contained in the original
             // html. If that content contains controllers, ... they could pollute/change the scope.
-            // However, using ng-view on an element with additional content does not make sense...
+            // However, using ng-views on an element with additional content does not make sense...
             // Note: We can't remove them in the cloneAttchFn of $transclude as that
             // function is called before linking the content, which would apply child
-            // directives to non existing elements.
+            // navbarDirective.js to non existing elements.
             var clone = $transclude(newScope, function(clone) {
               $animate.enter(clone, null, currentElement || $element).done(function onNgViewEnter(response) {
                 if (response !== false && angular.isDefined(autoScrollExp)

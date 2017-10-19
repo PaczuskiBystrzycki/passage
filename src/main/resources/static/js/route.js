@@ -1,9 +1,15 @@
 rootModule.config(function($routeProvider) {
     $routeProvider
-        .when("/nn", {
-            templateUrl : "templates/offer.htm"
+        .when("/transport", {
+            templateUrl : " views/transport.htm",
+            controller : 'transportController'
         })
-        .when("/offer", {
-            templateUrl : "/templates/offer.htm"
-        });
+        .when("/passage", {
+            templateUrl : " views/passage.htm",
+            controller : 'passageController'
+        })
+        .when("/", {
+            templateUrl : " views/main.htm",
+            controller : 'mainController'
+        })
 });

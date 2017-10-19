@@ -81,7 +81,7 @@ angular.module('ui.bootstrap.dropdown', [])
     return $scope.isOpen = arguments.length ? !!open : !$scope.isOpen;
   };
 
-  // Allow other directives to watch status
+  // Allow other directives.js to watch status
   this.isOpen = function() {
     return $scope.isOpen;
   };
