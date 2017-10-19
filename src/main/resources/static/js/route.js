@@ -4,7 +4,7 @@ rootModule.config(function($routeProvider) {
             templateUrl : " views/transportAdd.htm",
             controller : 'transportAddController'
         })
-        when("/transport-search", {
+        .when("/transport-search", {
             templateUrl : " views/transportSearch.htm",
             controller : 'transportSearchController'
         })
