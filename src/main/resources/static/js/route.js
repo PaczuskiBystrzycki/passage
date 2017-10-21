@@ -4,6 +4,10 @@ rootModule.config(function($routeProvider) {
             templateUrl : " views/transport.htm",
             controller : 'transportController'
         })
+        .when("/transportList", {
+            templateUrl : " views/transportList.htm",
+            controller : 'transportListController'
+        })
         .when("/passage", {
             templateUrl : " views/passage.htm",
             controller : 'passageController'
