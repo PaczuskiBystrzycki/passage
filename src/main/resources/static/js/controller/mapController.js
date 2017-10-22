@@ -1,20 +1,22 @@
 rootModule.controller("mapController",function (NgMap,$scope) {
 
+    $scope.types = "['establishment']";
     $scope.address = 'Ząbki';
-    var d= NgMap.getMap().then(function(map) {
-        gD= map.getCenter();
+    //$scope.mybounds = '{center: {lat: 45, lng: 9}, radius: 5000}';
+    NgMap.getMap().then(function(map) {
 
-        console.log('center f',map.getCenter());
-        // //console.log(map.getGeoLocation())
-        // console.log('map geolocataion',map.getGeoLocation)
-        // console.log('markers', map.markers);
-        // console.log('shapes', map.shapes);
     });
 
 
-    $scope.placeChanged = function(dana) {
-        // $scope.place = d.getPlace();
-        // console.log('location', $scope.place.geometry.location);
+    $scope.placeChanged = function() {
+         $scope.place = this.getPlace();
+            console.log('location', $scope.place.geometry.location);
+            // console.log('location', $scope.place.geometry);
+            // console.log('location', $scope.place.geometry.d);
+            // console.log('location', $scope.place.geometry.d.d);
+            // console.log('location', $scope.place.geometry.f);
+            // console.log('location', $scope.place.geometry.f.f);
+
         // $scope.map.setCenter(vm.place.geometry.location);
     }
 

@@ -1,4 +1,6 @@
 
+<div row="mapRow">
+
     <ng-maps map-lazy-load="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLhq7gwSeBQQvc6qvZ0mgK-2amefoiv6w&libraries=places" >
         <directions
                 draggable="true"
@@ -7,10 +9,27 @@
                 destination="Poland">
         </directions>
 
-        <ng-map center="{{address}}"></ng-map>
-       Address : <input  places-auto-complete size=80 ng-model="address" on-place-changed="{{placeChanged()}}"
-
+        <ng-map center="{{address}}">
+            <shape id="circle" name="circle" centered="true"
+                   stroke-color='#FF0000' stroke-opacity="0.8"stroke-weight="2"
+                   center="{{address}}" radius="40" editable="true" ></shape>
+        </ng-map>
+       Address : <input  places-auto-complete size=80 ng-model="address" on-place-changed="placeChanged()">
+        <!--<input places-auto-complete-->
+               <!--size=80-->
+               <!--ng-model="address"-->
+               <!--strict-bounds="true"-->
+               <!--types="types"-->
+               <!--on-place-changed="placeChanged()" /> <br/>-->
     </ng-maps>
 
+    <!--<div ng-show="place">-->
+        <!--<input ng-model="place.formatted_address">-->
+        <!--<input ng-model="place.geometry.location">-->
+        <!--<input ng-model="place.geometry.location.lat">-->
+        <!--<input ng-model="place.geometry.location.lng">-->
+    <!--</div>-->
+    <!--address : {{address}}-->
 </div>
+
 
