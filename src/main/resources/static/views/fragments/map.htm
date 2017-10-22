@@ -1,0 +1,16 @@
+
+    <ng-maps map-lazy-load="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLhq7gwSeBQQvc6qvZ0mgK-2amefoiv6w&libraries=places" >
+        <directions
+                draggable="true"
+                travel-mode="DRIVING"
+                origin="Poland"
+                destination="Poland">
+        </directions>
+
+        <ng-map center="{{address}}"></ng-map>
+       Address : <input  places-auto-complete size=80 ng-model="address" on-place-changed="{{placeChanged()}}"
+
+    </ng-maps>
+
+</div>
+
