@@ -1,4 +1,4 @@
-rootModule.controller("mapController",function (NgMap,$scope) {
+rootModule.controller("mapStartController",function (NgMap,$scope) {
 
     $scope.types = "['establishment']";
     $scope.address = 'Ząbki';
