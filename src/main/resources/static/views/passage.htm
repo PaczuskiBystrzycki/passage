@@ -7,35 +7,41 @@
         <div class="col-md-4">
 
             <div class="form-group">
-                <label for="typPaczki">Typ paczki</label>
-                <select name="cars" id="typPaczki">
-                    <option value="volvo">Elektronika</option>
-                    <option value="saab">Motoryzacja</option>
-                    <option value="fiat">Kolekcje i sztuka</option>
-                    <option value="audi">Inne</option>
-                </select>
+                <label ><h2>Skąd chcesz wysłac przesyłke</h2></label>
+                <label > Zaznacz miejsce skąd paczka ma byc zabrana</label>
+                <label > a także zaznacz powierzchnie na której jestes  </label>
+                <label > w stanie dostarczyć przesyłke od Przewoźnika</label>
+                <map-start-dir></map-start-dir>
             </div>
+
+            <div class="forsm-group">
+
+                <label > <h2> Gdzie chcesz dostarczyć przesyłke </h2> </label>
+                <label > Zaznacz miejsce gdzie paczka ma byc dostarczona</label>
+                <label > a także zaznacz powierzchnie na której jestes  </label>
+                <label > w stanie odebrac przesyłke od Przewoźnika</label>
+                <map-end-dir></map-end-dir>
+            </div>
+
             <div class="form-group">
-                <label for="ilosc">ilosc</label>
-                <select name="cars" id="ilosc">
-                    <option value="volvo">1</option>
-                    <option value="saab">2</option>
-                    <option value="fiat">3 </option>
-                    <option value="audi">...</option>
-                </select>
+                <label for="startTravelTime">Poczatek podrózy - Data</label>
+                <input type="text" class="form-control" id="startTravelTime">
+            </div>
+
+            <div class="form-group">
+                <label for="endTravelTime">Koniec podrózy - Data</label>
+                <input type="text" class="form-control" id="endTravelTime">
+            </div>
+
+            <div class="form-group">
+                <label for="rozmiarPaczki">Opisz przesyłke(rozmiar, waga, wytrzymałość,ilosc)</label>
+                <textarea class="form-control" id="rozmiarPaczki" rows="3"></textarea>
             </div>
 
             <div class="form-group">
                 <label for="dodatkoweInfo">Dodatkowe informacje </label>
                 <textarea class="form-control" id="dodatkoweInfo" rows="5"></textarea>
             </div>
-
-            <div class="form-group">
-                <label for="wielkosc">Wielkosc (m^2)</label>
-                <input type="text" class="form-control" id="wielkosc">
-            </div>
-
-
 
             <div class="form-group">
                 <label for="odbiorPaczkiMiejsce">Odbior paczki - Miejsce</label>
