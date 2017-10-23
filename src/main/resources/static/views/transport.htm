@@ -9,18 +9,15 @@
         <div class="col-md-4">
 
             <div class="form-group">
-                <!--<label for="startTravelPlace">Poczatek podrózy - Miejsce</label>-->
-                <!--<input type="text" class="form-control" id="startTravelPlace">-->
-                <label >Poczatek podrózy - Miejsce</label>
-                <map-start-dir>
-                </map-start-dir>
+                <label >Poczatek podrózy  w trakcie której moge przewieśc przesyłke.</label>
+                <label >  Zaznacz powierzchnie na którą jestes w stanie udać sie po przesyłke</label>
+                <map-start-dir></map-start-dir>
             </div>
 
             <div class="forsm-group">
-                <!--<label for="endTravelPlace">Koniec podrózy - Miejsce</label>-->
-                <!--<input type="text" class="form-control" id="endTravelPlace">-->
-                <label >Koniec podrózy - Miejsce</label>
 
+                <label >Koniec podrózy w trakcie której moge przewieśc przesyłke</label>
+                <label > Zaznacz powierzchnie na którą jestes w stanie udać sie z przesyłką</label>
                 <map-end-dir></map-end-dir>
             </div>
 
@@ -37,26 +34,31 @@
             <div class="form-group">
             <label for="typPojazdy">Typ pojazdu</label>
             <select name="cars" id="typPojazdy">
-                <option value="volvo">Volvo</option>
-                <option value="saab">Saab</option>
-                <option value="fiat">Fiat</option>
-                <option value="audi">Audi</option>
+                <option value="Osobowy">Osobowy</option>
+                <option value="Dostawczy">Dostawczy</option>
+                <option value="Motocykl">Motocykl</option>
+                <option value="Inne">Inne</option>
             </select>
             </div>
-
             <div class="form-group">
-                <label for="pojemnosc">Pojemnosc (m^2)</label>
-                <input type="text" class="form-control" id="pojemnosc">
+                    <label for="dodatkoweInfoPojazd">Dodatkowe informacje na temat pojazdu</label>
+                    <textarea class="form-control" id="dodatkoweInfoPojazd" rows="3"></textarea>
             </div>
 
             <div class="form-group">
-                <label for="dodatkoweInfo">Dodatkowe informacje</label>
+                <label for="pojemnosc">Pojemnosc jaka jestem w stanie przewiesc (m^2)</label>
+                <input type="text" class="form-control" id="pojemnosc">
+                <label for="dodatkoweInfoIlosc">Dodatkowe informacje na ilości przewiezionego ładunku</label>
+                <textarea class="form-control" id="dodatkoweInfoIlosc" rows="3"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="dodatkoweInfo">Dodatkowe informacje na temat podróży </label>
                 <textarea class="form-control" id="dodatkoweInfo" rows="5"></textarea>
             </div>
 
-            <button type="button" class="btn btn-info">Dostarcz paczke</button>
+            <button type="button" class="btn btn-info">Poinformuj innych o Twojej podróży!</button>
 
-            <!--<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>-->
         </div>
         <div class="col-md-4"></div>
     </div>

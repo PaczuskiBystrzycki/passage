@@ -8,19 +8,14 @@
                 origin="Poland"
                 destination="Poland">
         </directions>
-
+        <input  places-auto-complete size=80 ng-model="address" on-place-changed="placeChanged()">
         <ng-map center="{{address}}">
             <shape id="circle" name="circle" centered="true"
                    stroke-color='#FF0000' stroke-opacity="0.8"stroke-weight="2"
                    center="{{address}}" radius="40" editable="true" ></shape>
         </ng-map>
-       Address : <input  places-auto-complete size=80 ng-model="address" on-place-changed="placeChanged()">
 
     </ng-maps>
-
-    <!--<div ng-show="place">-->
-        <!--<input ng-model="place.formatted_address">-->
-    <!--</div>-->
 
 </div>
 
