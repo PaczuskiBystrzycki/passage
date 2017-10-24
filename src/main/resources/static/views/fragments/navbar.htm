@@ -1,26 +1,38 @@
 
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <!-- <a class="navbar-brand" href="#">Logo</a> -->
+<nav class="navbar navbar-inverse ">
+    <div row="container-fluid">
+        <div row="navbarRow">
+            <div class="col-md-4">
+                <div class="nav navbar-nav container-fluid">
+                    <a href="#!/"><b><h5>Szybkie i tanie przesyłki</h5></b></a>
+                </div>
+
+            </div>
+            <div class="col-md-4">
+                <div  row="rowsrodek" >
+                        <div class="col-md-4">
+                            <a href="#!/transport"><b>Chcę dostarczyc!</b></a>
+                        </div>
+                        <div class="col-md-4">
+                        </div>
+                        <div class="col-md-4">
+                            <a href="#!/passage"><b>Chcę wyslac!</b></a>
+                        </div>
+
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div row="prawa">
+                    <div class="col-md-5">
+                    </div>
+                    <div class="col-md-7">
+                        <a href="#"><span class="glyphicon glyphicon-user"></span> Moje konto </a>
+                        <a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Moje Przejazdy</a>
+                    </div>
+
+                </div>
+            </div>
         </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-        	<ul class="nav navbar-nav">
-            	<li><a href="#!/" ng-click="setActive(this,'transport')"><b>Szybkie i tanie przesyłki</b></a></li>
-            </ul>
-            <ul class="nav navbar-nav" style="margin-left:42%;">
-            	<li><a href="#!/transport" ng-click="setActive(this,'transport')"><b>Chcę dostarczyc!</b></a></li>
-                <li><a href="#!/passage" ng-click="setActive(this,'passage')"><b>Chcę wyslac!</b></a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Moje konto </a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Moje Przejazdy</a></li>
-            </ul>
-        </div>
+
     </div>
 </nav>
